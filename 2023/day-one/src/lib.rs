@@ -1,14 +1,15 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+use std::{
+    fs::File,
+    io::{BufRead, BufReader},
+    path::Path,
+};
 
 #[cfg(test)]
-mod tests {
-    use super::*;
+mod tests {}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+fn read_file<P: AsRef<Path>>(path: P) -> Result<Vec<String>, std::io::Error> {
+    let file = File::open(path)?;
+    let bufreader = BufReader::new(file).lines();
+    let string_vec: Vec<String> = bufreader.map(|f| f.unwrap()).collect();
+    Ok(string_vec)
 }
