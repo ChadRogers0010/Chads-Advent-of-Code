@@ -1,4 +1,4 @@
 Chad's Advent of Code projects
 
 2023:
-  - Day One (started)
+  - Day One (Part 1 Completed)
