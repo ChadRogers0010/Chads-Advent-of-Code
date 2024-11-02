@@ -8,14 +8,25 @@ use std::{
 mod tests {}
 
 pub fn solver(strings: Vec<String>) -> i32 {
-    let mut results_vec: Vec<(char, char)> = Vec::with_capacity(strings.len());
-    strings.iter().map(|f| -> (char, char) {
-        let a: Option<i32> = None;
-        let b: Option<i32> = None;
-        for char in f.chars(){if match_char_number(char)}
-    });
-    results_vec
+    strings
         .iter()
+        .map(|f| -> (char, char) {
+            let mut a: Option<char> = None;
+            let mut b: Option<char> = None;
+            for char in f.chars() {
+                if match_char_number(char) {
+                    a = Some(char);
+                    break;
+                }
+            }
+            for char in f.chars().rev() {
+                if match_char_number(char) {
+                    b = Some(char);
+                    break;
+                }
+            }
+            (a.unwrap(), b.unwrap())
+        })
         .map(|f| -> i32 { format!("{}{}", f.0, f.1).parse().unwrap() })
         .sum()
 }
