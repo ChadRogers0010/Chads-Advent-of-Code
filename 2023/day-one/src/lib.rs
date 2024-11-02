@@ -10,12 +10,15 @@ mod tests {
     #[test]
     pub fn attempt_advent_solution() {
         let input = read_file("./day-one-pt-1-input.txt").unwrap();
-        let answer = part_one_solver(input);
-        println!("Part 1 answer is {}", answer);
+        let part_one_answer: i32 = part_one_solver(&input);
+        println!("Part 1 answer is {}", part_one_answer);
+
+        let part_two_answer: i32 = part_two_solver(&input);
+        println!("Part 2 answer is {}", part_two_answer);
     }
 }
 
-pub fn part_one_solver(strings: Vec<String>) -> i32 {
+pub fn part_one_solver(strings: &[String]) -> i32 {
     strings
         .iter()
         .map(|f| -> (char, char) {
@@ -37,6 +40,10 @@ pub fn part_one_solver(strings: Vec<String>) -> i32 {
         })
         .map(|f| -> i32 { format!("{}{}", f.0, f.1).parse().unwrap() })
         .sum()
+}
+
+pub fn part_two_solver(_input: &[String]) -> i32 {
+    todo!()
 }
 
 pub fn read_file<P: AsRef<Path>>(path: P) -> Result<Vec<String>, std::io::Error> {
