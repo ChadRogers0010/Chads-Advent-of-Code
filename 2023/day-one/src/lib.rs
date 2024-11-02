@@ -5,7 +5,15 @@ use std::{
 };
 
 #[cfg(test)]
-mod tests {}
+mod tests {
+    use super::*;
+    #[test]
+    pub fn attempt_advent_solution() {
+        let input = read_file("../day-one-pt-1-input.txt").unwrap();
+        let answer = solver(input);
+        println!("The answer is {}", answer);
+    }
+}
 
 pub fn solver(strings: Vec<String>) -> i32 {
     strings
