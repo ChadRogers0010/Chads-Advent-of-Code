@@ -1,3 +1,4 @@
+pub const PROGRAM_NAME: &'static str = "Advent-of-Code";
 pub const DAY_01: &'static str = "day-01";
 pub const DAY_02: &'static str = "day-02";
 pub const DAY_03: &'static str = "day-03";
