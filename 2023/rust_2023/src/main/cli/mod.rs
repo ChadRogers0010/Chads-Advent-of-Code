@@ -1,9 +1,11 @@
 use clap::Command;
+use clap::*;
 
 use const_file::*;
 pub mod const_file;
 pub fn build_cli() -> clap::Command {
-    Command::new("Advent_of_Code")
+    Command::new(PROGRAM_NAME)
+        .args([arg!(-o - -one), arg!(-t - -two), arg!(-b - -both)])
         .command_01()
         .command_02()
         .command_03()
