@@ -1,6 +1,22 @@
 [package]
-name = "rust_2023"
+name = "Advent-Of-Code-2023-Rust"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+name = "lib"
+path = "src/lib/lib.rs"
+
+[profile.release.build-override]
+opt-level = 3
+build = "build.rs"
+[build-dependencies]
+clap = "*"
+clap_complete = "*"
+
+[[bin]]
+name = "Advent-Of-Code-2023-Rust"
+path = "src/main/main.rs"
+
 [dependencies]
+clap = "*"
