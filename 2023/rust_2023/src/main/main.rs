@@ -1,12 +1,22 @@
 use cli::const_file::*;
+use lib::utils::Part;
 mod cli;
 
 fn main() {
     let arg_matches = cli::build_cli().get_matches();
+    let part = Part::One; // match (
+                          //     &arg_matches.,
+                          // ) {
+                          //     (true, _, _) => Part::Both,
+                          //     (_, true, _) => Part::Two,
+                          //     (_, _, true) => Part::One,
+                          //     _ => panic!("No part specified"),
+                          // };
 
     match &arg_matches {
         day_command if day_command.subcommand_matches(DAY_01).is_some() => {
             println!("{} subcommand passed!", DAY_01);
+            lib::solutions::day_one::day_one_solver(part);
         }
         day_command if day_command.subcommand_matches(DAY_02).is_some() => {
             println!("{} subcommand passed!", DAY_02);
