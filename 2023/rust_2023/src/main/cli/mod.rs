@@ -1,6 +1,7 @@
 use clap::Command;
-pub mod const_file;
 
+use const_file::*;
+pub mod const_file;
 pub fn build_cli() -> clap::Command {
     Command::new("Advent_of_Code")
         .command_01()
@@ -58,80 +59,84 @@ trait ExtendCommand {
     fn command_25(self) -> Command;
 }
 
+fn init_command(name: &'static str) -> Command {
+    Command::new(name)
+}
+
 impl ExtendCommand for Command {
     fn command_01(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_01))
     }
     fn command_02(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_02))
     }
     fn command_03(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_03))
     }
     fn command_04(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_04))
     }
     fn command_05(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_05))
     }
     fn command_06(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_06))
     }
     fn command_07(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_07))
     }
     fn command_08(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_08))
     }
     fn command_09(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_09))
     }
     fn command_10(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_10))
     }
     fn command_11(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_11))
     }
     fn command_12(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_12))
     }
     fn command_13(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_13))
     }
     fn command_14(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_14))
     }
     fn command_15(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_15))
     }
     fn command_16(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_16))
     }
     fn command_17(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_17))
     }
     fn command_18(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_18))
     }
     fn command_19(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_19))
     }
     fn command_20(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_20))
     }
     fn command_21(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_21))
     }
     fn command_22(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_22))
     }
     fn command_23(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_23))
     }
     fn command_24(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_24))
     }
     fn command_25(self) -> Command {
-        self
+        self.subcommand(init_command(DAY_25))
     }
 }
