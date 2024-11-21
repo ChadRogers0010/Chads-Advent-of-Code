@@ -20,3 +20,4 @@ path = "src/main/main.rs"
 
 [dependencies]
 clap = "*"
+nom = "7.1.3"
