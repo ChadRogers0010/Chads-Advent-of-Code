@@ -1,4 +1,8 @@
 pub const PROGRAM_NAME: &'static str = "Advent-of-Code";
+pub const PART_ONE: &'static str = "part-one";
+pub const PART_TWO: &'static str = "part-two";
+pub const PART_BOTH: &'static str = "part-both";
+
 pub const DAY_01: &'static str = "day-01";
 pub const DAY_02: &'static str = "day-02";
 pub const DAY_03: &'static str = "day-03";

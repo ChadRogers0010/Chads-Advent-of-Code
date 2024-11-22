@@ -4,14 +4,42 @@ mod cli;
 
 fn main() {
     let arg_matches = cli::build_cli().get_matches();
-    let part = Part::One; // match (
-                          //     &arg_matches.,
-                          // ) {
-                          //     (true, _, _) => Part::Both,
-                          //     (_, true, _) => Part::Two,
-                          //     (_, _, true) => Part::One,
-                          //     _ => panic!("No part specified"),
-                          // };
+    // let part: Part = match &arg_matches {
+    //     flag if flag.get_flag("o") => Part::One,
+    //     flag if flag.get_flag("t") => Part::Two,
+    //     flag if flag.get_flag("b") => Part::Both,
+    //     _ => panic!("no flags"),
+    // };
+    let part = match &arg_matches {
+        part if part
+            // .subcommand_matches(PROGRAM_NAME)
+            // .unwrap()
+            .try_get_one::<&String>(PART_ONE)
+            .is_ok() =>
+        {
+            Part::One
+        }
+
+        part if part
+            // .subcommand_matches(PROGRAM_NAME)
+            // .unwrap()
+            .try_get_one::<&String>(PART_TWO)
+            .is_ok() =>
+        {
+            Part::Two
+        }
+
+        part if part
+            // .subcommand_matches(PROGRAM_NAME)
+            // .unwrap()
+            .try_get_one::<&String>(PART_BOTH)
+            .is_ok() =>
+        {
+            Part::Both
+        }
+        _ => todo!(),
+    };
+    println!("part: {:?}", part);
 
     match &arg_matches {
         day_command if day_command.subcommand_matches(DAY_01).is_some() => {

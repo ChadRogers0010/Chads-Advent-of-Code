@@ -5,7 +5,31 @@ use const_file::*;
 pub mod const_file;
 pub fn build_cli() -> clap::Command {
     Command::new(PROGRAM_NAME)
-        .args([arg!(-o - -one), arg!(-t - -two), arg!(-b - -both)])
+        // .short_flag('o')
+        // .short_flag('t')
+        // .short_flag('b')
+        .arg(
+            Arg::new(PART_ONE)
+                .short('o')
+                .long("part-one")
+                .alias("one")
+                .default_value(""),
+        )
+        .arg(
+            Arg::new(PART_TWO)
+                .short('t')
+                .long("part-two")
+                .alias("two")
+                .default_value(""),
+        )
+        .arg(
+            Arg::new(PART_BOTH)
+                .short('b')
+                .long("part-both")
+                .alias("both")
+                .default_value(""),
+        )
+        // .args([arg!(-o - -one), arg!(-t - -two), arg!(-b - -both)])
         .command_01()
         .command_02()
         .command_03()
