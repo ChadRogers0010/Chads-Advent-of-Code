@@ -127,7 +127,5 @@ fn main() {
         day_command if day_command.subcommand_matches(DAY_25).is_some() => {
             println!("{} subcommand passed!", DAY_25);
         }
-        _ => println!("No commands given"),
     };
-    println!("Hello AoC 2023!");
 }
