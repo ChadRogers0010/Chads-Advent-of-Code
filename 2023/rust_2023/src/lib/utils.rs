@@ -16,8 +16,16 @@ pub fn read_file<P: AsRef<Path>>(path: P) -> Result<Vec<String>, std::io::Error>
 //     let cur_loc = fs::ReadDir::from("./");
 // }
 
+#[derive(Debug)]
 pub enum Part {
     One,
     Two,
     Both,
+}
+
+#[derive(Debug)]
+pub enum SolutionResult<T> {
+    Success(T),
+    Failure(String),
+    ReadWriteErr(Option<T>, std::io::Error),
 }
