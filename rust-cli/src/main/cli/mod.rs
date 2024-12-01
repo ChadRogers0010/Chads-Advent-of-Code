@@ -13,19 +13,20 @@ trait ExtendCommand {
 
 impl ExtendCommand for clap::Command {
     fn init_years(self) -> Self {
-        let mut scratch = self;
+        let mut cli = self;
         for year in YEAR_ARRAY {
-            let subcom = clap::Command::new(year).init_days().about(year);
-            scratch = scratch.subcommand(subcom);
+            let subcom = clap::Command::new(year).init_days();
+            cli = cli.subcommand(subcom);
         }
-        scratch
+        cli
     }
 
     fn init_days(self) -> Self {
-        let mut scratch = self;
+        let mut cli = self;
         for day in DAY_ARRAY {
-            scratch = scratch.arg(Arg::new(day));
+            let arg = Arg::new(day); // .action(clap::ArgAction::SetTrue);
+            cli = cli.arg(arg);
         }
-        scratch
+        cli
     }
 }

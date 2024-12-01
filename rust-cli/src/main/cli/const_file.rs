@@ -3,6 +3,12 @@ pub const PART_ONE: &'static str = "part-one";
 pub const PART_TWO: &'static str = "part-two";
 pub const PART_BOTH: &'static str = "part-both";
 
+// Utils
+pub const STATS: &'static str = "stats";
+pub const INPUT: &'static str = "stats";
+
+// Days
+
 pub const DAY_01: &'static str = "day-01";
 pub const DAY_02: &'static str = "day-02";
 pub const DAY_03: &'static str = "day-03";
@@ -34,16 +40,17 @@ pub const DAY_ARRAY: [&'static str; 25] = [
     DAY_25,
 ];
 
-pub const YEAR_2015: &'static str = "year-2015";
-pub const YEAR_2016: &'static str = "year-2016";
-pub const YEAR_2017: &'static str = "year-2017";
-pub const YEAR_2018: &'static str = "year-2018";
-pub const YEAR_2019: &'static str = "year-2019";
-pub const YEAR_2020: &'static str = "year-2020";
-pub const YEAR_2021: &'static str = "year-2021";
-pub const YEAR_2022: &'static str = "year-2022";
-pub const YEAR_2023: &'static str = "year-2023";
-pub const YEAR_2024: &'static str = "year-2024";
+// Years
+pub const YEAR_2015: &'static str = "2015";
+pub const YEAR_2016: &'static str = "2016";
+pub const YEAR_2017: &'static str = "2017";
+pub const YEAR_2018: &'static str = "2018";
+pub const YEAR_2019: &'static str = "2019";
+pub const YEAR_2020: &'static str = "2020";
+pub const YEAR_2021: &'static str = "2021";
+pub const YEAR_2022: &'static str = "2022";
+pub const YEAR_2023: &'static str = "2023";
+pub const YEAR_2024: &'static str = "2024";
 pub const YEAR_ARRAY: [&'static str; 10] = [
     YEAR_2015, YEAR_2016, YEAR_2017, YEAR_2018, YEAR_2019, YEAR_2020, YEAR_2021, YEAR_2022,
     YEAR_2023, YEAR_2024,
